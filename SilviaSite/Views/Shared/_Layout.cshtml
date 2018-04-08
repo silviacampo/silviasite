@@ -5,6 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8871088-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-8871088-3');
+    </script>
+
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="My name is Silvia Campo. I'm a software developer with experience in .NET, JavaEE, AngularJS and PHP">
@@ -66,10 +76,10 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <a href="?culture=en-US" class="langlinks"><img src="/img/english.jpeg" alt="English" title="English" tooltip="English" id="enlang"></a>
-                <a href="?culture=es-US" class="langlinks"><img src="/img/spanish.jpeg" alt="Spanish" title="Spanish" tooltip="Spanish" id="splang"></a>
+                <a href="?culture=en-US" class="langlinks"><img src="/img/english.jpeg" alt="@Localizer["english"]" title="@Localizer["english"]" tooltip="@Localizer["english"]" id="enlang"></a>
+                <a href="?culture=es-US" class="langlinks"><img src="/img/spanish.jpeg" alt="@Localizer["spanish"]" title="@Localizer["spanish"]" tooltip="@Localizer["spanish"]" id="splang"></a>
                 
-                <a href="?culture=fr-FR" class="langlinks"><img src="/img/french.jpg" alt="French" title="French" tooltip="French" id="frlang"></a>
+                <a href="?culture=fr-FR" class="langlinks"><img src="/img/french.jpg" alt="@Localizer["french"]" title="@Localizer["french"]" tooltip="@Localizer["french"]" id="frlang"></a>
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
@@ -79,7 +89,7 @@
                         <a class="page-scroll" href="#about">@Localizer["aboutme"]</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#album">@Localizer["photo album"]</a>
+                        <a class="page-scroll" href="#album">@Localizer["photoalbum"]</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#agenda">@Localizer["agenda"]</a>
@@ -111,7 +121,7 @@
             <div class="container text-center">
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="http://www.linkedin.com/pub/silvia-campo/45/803/262" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name"></span></a>
+                        <a href="http://www.linkedin.com/pub/silvia-campo/45/803/262" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
                     </li>
                     <li>
                         <a href="https://github.com/silviacampo" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
@@ -132,6 +142,8 @@
 
 	<environment names="Development">
 		<script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 		<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="js/jquery.form.min.js"></script>
         <!-- Plugin JavaScript -->
@@ -147,6 +159,8 @@
 				crossorigin="anonymous"
 				integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
 		</script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
 				asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
 				asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
@@ -163,16 +177,7 @@
 	</environment>
 
 	@RenderSection("Scripts", required: false)
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-        try {
-            var pageTracker = _gat._getTracker("UA-8871088-3");
-            pageTracker._trackPageview();
-        } catch (err) { }
-    </script>
+
     </script>
     <!-- Add these scripts to  the bottom of the page -->
     <!-- jQuery 1.7+ -->

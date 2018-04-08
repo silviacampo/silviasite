@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.Localization
-@using SilviaSite.Controllers
+@using SilviaSite.Models
 @inject IViewLocalizer Localizer
 @model EmailMessage
         <!-- Contact Section -->
@@ -55,7 +55,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12" style="text-align:left;">
-                            <button type="button" onclick="Send()" class="btn btn-default btn-lg">Send</button>
+                            <button type="button" onclick="Send()" class="btn btn-default btn-lg">@Localizer["send"]</button>
                         </div>
                     </div>
                 </form>

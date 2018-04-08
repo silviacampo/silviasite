@@ -117,13 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="EN" xml:space="preserve">
+  <data name="aboutme" xml:space="preserve">
+    <value>Moi</value>
+  </data>
+  <data name="agenda" xml:space="preserve">
+    <value>Agenda</value>
+  </data>
+  <data name="contactme" xml:space="preserve">
+    <value>Contactez-moi</value>
+  </data>
+  <data name="english" xml:space="preserve">
     <value>Anglais</value>
   </data>
-  <data name="ES" xml:space="preserve">
-    <value>Espagnol</value>
-  </data>
-  <data name="FR" xml:space="preserve">
+  <data name="french" xml:space="preserve">
     <value>Français</value>
+  </data>
+  <data name="gossip" xml:space="preserve">
+    <value>Gossip</value>
+  </data>
+  <data name="myteam" xml:space="preserve">
+    <value>Mon Équipe</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Autres Projets</value>
+  </data>
+  <data name="photoalbum" xml:space="preserve">
+    <value>Photos</value>
+  </data>
+  <data name="spanish" xml:space="preserve">
+    <value>Espagnol</value>
   </data>
 </root>

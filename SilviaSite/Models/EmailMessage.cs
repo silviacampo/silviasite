@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace SilviaSite.Models
 {
-    public class ContactFormModel
+    public class EmailMessage
     {
+        public EmailMessage()
+        {
+        }
         [Required]
-        public string Email { get; set; }
+        public string From { get; set; }
         [Required]
         public string Subject { get; set; }
         [Required]
-        public bool Required { get; set; }
+        public string Content { get; set; }
         [Required]
-        public string Message { get; set; }
+        public bool Required { get; set; }
     }
 }

@@ -30,6 +30,15 @@
     <EmbeddedResource Update="Resources\Controllers.HomeController.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Shared._ContactForm.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Shared._ContactForm.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views.Shared._ContactForm.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Views.Shared._Layout.en.resx">
       <Generator>ResXFileCodeGenerator</Generator>
     </EmbeddedResource>

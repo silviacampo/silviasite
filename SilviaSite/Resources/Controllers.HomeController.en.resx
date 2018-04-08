@@ -117,7 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TEST" xml:space="preserve">
-    <value>English</value>
+  <data name="MessageFailSent" xml:space="preserve">
+    <value>Your message has not been delivered. Please retry later.</value>
+  </data>
+  <data name="MessageSent" xml:space="preserve">
+    <value>Your message has been successfully sent. Thank you.</value>
+  </data>
+  <data name="MissingFields" xml:space="preserve">
+    <value>All fields are required.</value>
   </data>
 </root>

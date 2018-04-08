@@ -1,0 +1,202 @@
+﻿@{
+    //ViewData["Title"] = "Home Page";
+}
+   <!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Silvia Campo</h1>
+                    <p class="intro-text">
+                        Développeuse web avec expérience en conception et mise en place des applications sur plusieurs plateformes tel que .Net, JavaEE, JavaScript, PHP.
+                    </p>
+
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h2>À propos de moi</h2>
+            <p>
+                Je suis une développeuse de logiciel, expérimentée en applications web.
+                J'ai utilisé divers technologies pour implémenter le côté serveur: .Net, JavaEE, PHP.
+                D'ailleurs, pour le côté client, j'ai utilisé HTML5, JQuery, JQuery UI et JQuery UI Mobile.
+                En plus, j'ai implémenté une application mobile sur Android et une application hybride AngularJS.
+            </p>
+            <div id="aboutImg" style="float:left;">
+                <p>
+                    En plus d'avoir un travail à temps plein, j'ai poursuivi des "side projects".
+                    D'abord des vagues idées, mais qu'au fur et à mesure que sont considérés (et analysés en UML), devient plus intéressantes. Alors... arrête-toi de tourner en rond, et allons droit au but!
+                </p>
+            </div>
+            <a href="#album" class="btn btn-circle page-scroll">
+                <i class="fa fa-angle-double-down animated"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Album Section -->
+<section id="album" class="content-section text-center">
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div id="albumImg" style="float:left;">
+                    <h2>Album</h2>
+                    <p>
+                        Un
+                        <a href="https://albums.silviacampo.com/" class="btn btn-default btn-sml"><i class="fa fa-camera"></i> Album de photos </a> est un site web qui permet de créer des albums publics, pour amies seulement ou privés. Vous pouvez télécharger plusieurs photos au même temps et les arranger ou trier plus tard.
+                    </p>
+                </div>
+                <div id="albumClientImg" style="float:left;">
+                    <p>Le site a été développé en JavaEE (JSP, Servlets, JPA) connecté à MySql et pour le côté client, j'ai utilisé HTML5, JQuery, JQuery UI et JQuery UI Mobile.</p>
+                    <p>
+                        Les photos sont redimensionnées et ajustées au côté client pour réduire le temps de téléchargement utilisant le "File API", les fonctionnalités du "canvas" et d'image. J'ai partagé le code à
+                        <a href="https://github.com/silviacampo/html5-image-tool" class="btn btn-default btn-sml"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>.
+                    </p>
+                    <p>J'ai aussi développé une application mobile hybride AngularJS qui permet voir les albums, elle est sur <a href="https://play.google.com/store/apps/details?id=com.silviacampo.albums.client&hl=en" class="btn btn-default btn-sml"><i class="fa fa-play fa-fw"></i> <span class="network-name">Google Play</span></a>. Elle se connecte au site à travers de "websockets". </p>
+                </div>
+
+                <a href="#agenda" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Agenda Section -->
+<section id="agenda" class="content-section text-center">
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div id="agendaImg" style="float:left;">
+                    <h2>Agenda</h2>
+                    <p>
+                        L'
+                        <a href="https://agenda.silviacampo.com/" class="btn btn-default btn-sml"><i class="fa fa-calendar "></i> agenda</a> sert à organiser toutes vos activités. Vous pouvez consulter, déplacer ou éditer des rendez-vous dans le calendrier.
+                    </p>
+                </div>
+                <div id="agendaClientImg" style="float:left;">
+                    <p>
+                        Ce site a été développé en .NET Core MVC avec Entity Framework connecté à MySql et pour le côté client j'ai utilisé razor views, fullcalendar, bootbox, JQuery et JQuery UI.
+                    </p>
+                    <p>Le site a aussi une application mobile hybride AngularJS pour consulter les activités, elle est sur <a href="https://play.google.com/store/apps/details?id=com.silviacampo.agenda.client&hl=en" class="btn btn-default btn-sml"><i class="fa fa-play fa-fw"></i> <span class="network-name">Google Play</span></a>. L'application accède aux données à travers de services "Web Api" avec authentification JWT fournies par le site.</p>
+                </div>
+                <a href="#gossip" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Gossip Section -->
+<section id="gossip" class="content-section text-center">
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div id="gossipSImg" style="float:left;">
+                    <h2>Gossip...</h2><br />
+                    <p>
+                        Les trois mousquetaires
+                        <a href="http://www.gossipspecials.com/" class="btn btn-default btn-sml"><i class="fa fa-shield"></i> Gossip Specials </a>,
+                        <a href="http://www.gossipdeals.com/" class="btn btn-default btn-sml"><i class="fa fa-shield"></i> Gossip Deals</a> et
+                        <a href="http://www.gossipoffers.com/" class="btn btn-default btn-sml"><i class="fa fa-shield"></i> Gossip Offers</a>! A l'aide pour partager et épargner...
+                    </p>
+                </div>
+                <div id="gossipDImg" style="float:left;">
+                    <br /><p>
+                        Les sites roulent sur la même application en vue classique et mobile.
+                        L'application a été développée sur CakePHP, une plate-forme MVC et ORM.
+                        Elle est connectée à MySql et utilise des listes de control d'accès, localisation et JQuery.
+                        J'ai fait aussi une application client sur Android "GossipSpecialsApp" compatible avec tous les trois sites.
+                    </p>
+                </div>
+                <div id="gossipOImg" style="float:left;">
+                    <br /><br /><p>
+                        Les sites utilisent un contrôle pour choisir le rating crée par moi. Allez le voir!
+                        Si vous l'aimez, vous pourriez le trouver à <a href="https://github.com/silviacampo/Jquery-rating-picker" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </p>
+                </div><a href="#others" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- other projects Section -->
+<section id="others" class="content-section text-center" ">
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Autres Projets</h2>
+                <div id="PCImg" style="float:left;">
+                    <br /><br /><p>Le site courant, développé avec CapePHP connecté à MySql et JQuery et reconçu avec bootstrap.</p>
+                    <p>Le site de<a href="http://www.pablocassani.com/" class="btn btn-default btn-sml"><i class="fa fa-user"></i> Pablo Cassani</a>, développé en C# Asp.NET WebForms connecté à MySql sur Apache Mono</p>
+                </div>
+                <!--<div id="SYPImg" style="float:left;"><br/><br/><p>Le site <a href="http://social.silviacampo.com/"  class="btn btn-default btn-sml"><i class="fa fa-users"></i> Silvia et Pablo</a> qui permet organiser les coordonnées de nos amies et partager des photos, développé en PHP et MySql.</p></div>-->
+                <p>
+                    Et des autres projets
+                    <!--such as an agenda using .NET MVC/MySql, another agenda using AngularJS/.NET WebApi/Sqlite,
+                    integration tests for Gossip using Selenium and Watin -->
+                    en cours...
+                    Vous pouvez les suivre à
+                    <a href="https://github.com/silviacampo" class="btn btn-default btn-sml"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                </p>
+                <a href="#myteam" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MyTeam Section -->
+<section id="myteam" class="content-section text-center" ">
+    <div class="row">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Mon Équipe</h2>
+                <div id="catImg">
+                    <h3>My Cat</h3><br /><br /><br />
+                    <p>
+                        Notre petite compagne nous a quittés en 2016... Le point de repère de notre équipe, elle est la muse qui nous inspire. Elle crée une ambiance rafraîchissante au milieu de travail. Elle maîtrise la balance travail-détendre en connaissant le moment précis pour prendre la pause, assise devant l’écran ou le clavier de l’ordinateur.
+                        Personne ne peut dire que les chats "écaille de tortue" ne sont pas fortunés.
+                    </p>
+                </div>
+
+                <div id="peppaImg">
+                    <h3>Peppa</h3><br /><br /><br />
+                    <p>Une collaboratrice fidèle et acharnée, prête à nous aider. Elle est bien gentille et patiente... elle va rapidement apprendre à programmer. Le poste qu’elle doit remplir est tout un défis, elle est déjà en train de réussir. Tant mieux! Pour commencer, elle a choisi la meilleure place pour s'asseoir... sur ma laptop.</p>
+                </div>
+
+                <div id="pabloImg" style="float:left;">
+                    <h3>Pablo</h3><br /><br /><br /><br /><br />
+                    <p>
+                        Il est responsable du réseau d'ordinateurs et matérielles. Pas souvent, les choses ne marchent plus après ses "mises au point"...
+                        Finalement, on peut dire qu’il est très patient, spécialement quand je suis tellement concentrée sur mon travail que je me déconnecte de la planète.
+                    </p>
+                </div>
+
+                <!--<div id="penguinImg" style="float:left;"><h3>Le Pingouin</h3><br/><br/><br/><br/><br/><br/>
+                <p>	Autre membre fondamental de notre équipe, avec qui on se connaît depuis très longtemps, mais ses qualités ont été redécouvert au Canada, peut-être grâce à la température. Il nous apprendre toujours à aimer le climat nordique et ses systèmes de exploitation.</p></div>-->
+                <a href="#contact" class="btn btn-circle page-scroll">
+                    <i class="fa fa-angle-double-down animated"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

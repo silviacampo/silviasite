@@ -1,0 +1,197 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My name is Silvia Campo. I'm a software developer with experience in .NET, JavaEE, AngularJS and PHP">
+    <meta name="author" content="Silvia,Campo,Montreal,Canada,Web Development, Database, resume, .NET, AngularJS, PHP, JavaEE, Android, jQuery">
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <title>@ViewData["Title"] Silvia Campo</title>
+
+	<environment names="Development">
+		<link rel="stylesheet" href="~/css/bootstrap.min.css"/>
+        <!-- Custom CSS -->
+        <link href="css/grayscale.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Merienda+One|Merienda' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/clippy.css" media="all">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	</environment>
+	<environment names="Staging,Production">
+		<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+			  asp-fallback-href="~/css/bootstrap.min.css"
+			  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <!-- Custom CSS -->
+        <link href="css/grayscale.min.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Merienda+One|Merienda' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/clippy.min.css" media="all">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	</environment>
+	@Html.Raw(JavaScriptSnippet.FullScript)
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <img src="./img/silvia.icon.png" style="display: inline;" width="35">   Silvia Campo
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <a href="?culture=en-US" class="langlinks"><img src="/img/english.jpeg" alt="English" title="English" tooltip="English" id="enlang"></a>
+                <a href="?culture=es-US" class="langlinks"><img src="/img/spanish.jpeg" alt="Spanish" title="Spanish" tooltip="Spanish" id="splang"></a>
+                
+                <a href="?culture=fr-FR" class="langlinks"><img src="/img/french.jpg" alt="French" title="French" tooltip="French" id="frlang"></a>
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">@Localizer["aboutme"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#album">@Localizer["photo album"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#agenda">@Localizer["agenda"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#gossip">@Localizer["gossip"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#others">@Localizer["other"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#myteam">@Localizer["myteam"]</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">@Localizer["contactme"]</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+		@RenderBody()
+        @await Html.PartialAsync("_ContactForm")
+
+        <!-- Footer -->
+        <footer>
+            <div class="container text-center">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="http://www.linkedin.com/pub/silvia-campo/45/803/262" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/silviacampo" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/115513087611666004244/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+                <p>
+                    Copyright &copy; Silvia Campo
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script>
+                </p>
+            </div>
+        </footer>
+
+
+	<environment names="Development">
+		<script src="~/lib/jquery/dist/jquery.js"></script>
+		<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="js/jquery.form.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/grayscale.min.js"></script>  
+	</environment>
+	<environment names="Staging,Production">
+		<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+				asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+				asp-fallback-test="window.jQuery"
+				crossorigin="anonymous"
+				integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
+		</script>
+		<script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+				asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+				asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+				crossorigin="anonymous"
+				integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+		</script>
+		<script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="js/jquery.form.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/grayscale.min.js"></script>  
+	</environment>
+
+	@RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-8871088-3");
+            pageTracker._trackPageview();
+        } catch (err) { }
+    </script>
+    </script>
+    <!-- Add these scripts to  the bottom of the page -->
+    <!-- jQuery 1.7+ -->
+    <!-- Clippy.js -->
+    <script src="js/clippy.min.js"></script>
+
+    <!-- Init script -->
+    <script type="text/javascript">
+        clippy.load('Links', function (agent) {
+            agent.show();
+            agent.play("Greeting");
+            agent.animate();
+            agent.play("Alert")
+            agent.play('Wave');
+            agent.play('Searching');
+            agent.moveTo(100, 100);
+            agent.gestureAt(200, 200);
+            agent.play("DeepIdleE")
+        });
+    </script>
+</body>
+</html>

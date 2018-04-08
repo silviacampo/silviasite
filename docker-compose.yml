@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  esmartadminpanel:
+    image: esmartadminpanel
+    build:
+      context: .
+      dockerfile: ESmartAdminPanel/Dockerfile

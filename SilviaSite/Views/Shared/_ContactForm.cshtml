@@ -74,14 +74,14 @@
                     success: function (response) {
                         var dv = $("#Response");
                         dv.empty();
-                        dv.html(response);
+                        dv.html(response.value);
                         $('#contactForm').find("input[type=text], textarea").val("");
                         $('#contactForm').find("input[type=checkbox]").prop('checked', false);
                     },
                     failure: function (response) {
                         var dv = $("#Response");
                         dv.empty();
-                        dv.hmtl(response);
+                        dv.hmtl(response.value);
                     }
                 });
             }

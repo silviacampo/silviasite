@@ -234,7 +234,7 @@ a:focus {
 }
 
 @-webkit-keyframes pulse {    
-    0 {
+    0% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
@@ -251,7 +251,7 @@ a:focus {
 }
 
 @-moz-keyframes pulse {    
-    0 {
+    0% {
         -moz-transform: scale(1);
         transform: scale(1);
     }
@@ -287,7 +287,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/GossipsMosaic.jpg) no-repeat center center scroll; //todo: replace with gossip image
+    background: url(../img/GossipsMosaic.jpg) no-repeat center center scroll; 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -299,7 +299,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll; //todo: replace with album image
+    background: url(../img/downloads-bg.jpg) no-repeat center center scroll; 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -311,7 +311,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll; //todo: replace with others image
+    background: url(../img/downloads-bg.jpg) no-repeat center center scroll; 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -322,7 +322,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/team.jpg) no-repeat center center scroll; //todo: replace with team image
+    background: url(../img/team.jpg) no-repeat center center scroll; 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -429,8 +429,6 @@ body {
     webkit-tap-highlight-color: rgba(255,255,255,.2);
 }
 
-element.style {
-}
 #contactmeImg{
   width:100%;
   min-height:155px;
@@ -516,7 +514,7 @@ min-height: 300px;
 background: #16466a url('../img/pinguin.jpg') no-repeat top right  scroll;;
 }
 
-#ContentFrom,#ContentSubject, { color: #0000;}
+#ContentFrom,#ContentSubject { color: black;}
 
 /*textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
    border-color: rgba(229, 103, 23, 0.8);
@@ -548,4 +546,27 @@ textarea, input[type=text] {
 .form-horizontal .form-group {
     margin-right: 0px;
     margin-left: 0px;
+}
+
+#overlay {
+    text-align: center;
+    vertical-align: middle;
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 45%;
+    left: 45%;
 }

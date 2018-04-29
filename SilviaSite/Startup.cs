@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SilviaSite.Infrastructure;
+using Microsoft.ApplicationInsights.Extensibility;
 
 namespace SilviaSite
 {
@@ -20,6 +21,12 @@ namespace SilviaSite
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
+            if (env.IsDevelopment())
+            {
+                TelemetryConfiguration.Active.DisableTelemetry = true;
+            }
+
             Configuration = builder.Build();
         }
 

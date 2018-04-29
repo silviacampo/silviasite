@@ -11,11 +11,5 @@ namespace SilviaSite.Infrastructure
         int SmtpPort { get; }
         string SmtpUsername { get; set; }
         string SmtpPassword { get; set; }
-        bool SSL { get; set; }
-
-        string PopServer { get; }
-        int PopPort { get; }
-        string PopUsername { get; }
-        string PopPassword { get; }
     }
 }

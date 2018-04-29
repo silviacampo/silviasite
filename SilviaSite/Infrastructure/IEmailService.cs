@@ -8,7 +8,6 @@ namespace SilviaSite.Infrastructure
 {
     public interface IEmailService
     {
-        void Send(EmailMessage emailMessage);
-        List<EmailMessage> ReceiveEmail(int maxCount = 10);
+        bool Send(EmailMessage emailMessage);
     }
 }

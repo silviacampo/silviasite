@@ -15,13 +15,13 @@ namespace SilviaSite.Controllers
 {
     public class HomeController : Controller
     {
-        private IEmailConfiguration _emailConfiguration;
+        private readonly IEmailService _emailService;
 
         private readonly IStringLocalizer<HomeController> _localizer;
 
-        public HomeController(IEmailConfiguration emailConfiguration, IStringLocalizer<HomeController> localizer)
+        public HomeController(IEmailService emailService, IStringLocalizer<HomeController> localizer)
         {
-            _emailConfiguration = emailConfiguration;
+            _emailService = emailService;
             _localizer = localizer;
         }
 
@@ -35,39 +35,10 @@ namespace SilviaSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var message = new MimeMessage();
-                message.To.Add(new MailboxAddress(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpUsername));
-                message.From.Add(new MailboxAddress(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpUsername));
-
-                message.Subject = emailMessage.Subject;
-                message.Body = new TextPart(TextFormat.Text)
-                {
-                    Text = "from: " + emailMessage.From + Environment.NewLine + "responseRequired: " + emailMessage.Required + Environment.NewLine + emailMessage.Content
-                };
-
-                using (var emailClient = new SmtpClient())
-                {
-                    try
-                    {
-                        emailClient.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, MailKit.Security.SecureSocketOptions.StartTlsWhenAvailable);
-
-                        emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
-
-                        emailClient.Authenticate(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
-
-                        emailClient.Send(message);
-
-                        return Json(_localizer["MessageSent"]);
-                    }
-                    catch (Exception e)
-                    {
-                        return Json(_localizer["MessageFailSent"]);
-                    }
-                    finally
-                    {
-                        emailClient.Disconnect(true);
-                    }
+                if (_emailService.Send(emailMessage)) {
+                    return Json(_localizer["MessageSent"]);
                 }
+                return Json(_localizer["MessageFailSent"]);
             }
             else
             {

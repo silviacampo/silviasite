@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using SilviaSite.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
@@ -12,7 +11,7 @@ using Microsoft.ApplicationInsights.Extensibility;
 
 namespace SilviaSite
 {
-	public class Startup
+    public class Startup
     {
         public Startup(IHostingEnvironment env)
         {
@@ -55,6 +54,7 @@ namespace SilviaSite
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
+                TelemetryConfiguration.Active.DisableTelemetry = true;
             }
             else
             {

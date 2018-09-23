@@ -13,6 +13,7 @@
                 </div>
                 <form class="form form-horizontal" id="contactForm" method="post">
                     <div id="Response" class="formlabels" style="text-align:left;">@Localizer["invitation"]</div>
+                    <input type="hidden" id="culture" value="@Localizer["contactme"]" />
                     <div asp-validation-summary="All"></div>
                     <div class="row">
                         <div class="col-md-12" style="text-align:left;">
@@ -67,27 +68,34 @@
     </div>
 </section>
 <script type="text/javascript">
-            function Send() {
-                $('#overlay').css('display','block');
-                $.ajax({
-                    type: "POST",
-                    url: "/Home/Send",
-                    data: $('#contactForm').serialize(),
-                    dataType: "json",
-                    success: function (response) {
-                        var dv = $("#Response");
-                        dv.empty();
-                        dv.html(response.value);
-                        $('#contactForm').find("input[type=text], textarea").val("");
-                        $('#contactForm').find("input[type=checkbox]").prop('checked', false);
-                        $('#overlay').css('display', 'none');
-                    },
-                    failure: function (response) {
-                        var dv = $("#Response");
-                        dv.empty();
-                        dv.hmtl(response.value);
-                        $('#overlay').css('display', 'none');
-                    }
-                });
+    function Send() {
+        $('#overlay').css('display', 'block');
+        $.ajax({
+            type: "POST",
+            url: "/Home/Send/?culture=" + getUrlParameter('culture'),
+            data: $('#contactForm').serialize(),
+            dataType: "json",
+            success: function (response) {
+                var dv = $("#Response");
+                dv.empty();
+                dv.html(response.value);
+                $('#contactForm').find("input[type=text], textarea").val("");
+                $('#contactForm').find("input[type=checkbox]").prop('checked', false);
+                $('#overlay').css('display', 'none');
+            },
+            failure: function (response) {
+                var dv = $("#Response");
+                dv.empty();
+                dv.hmtl(response.value);
+                $('#overlay').css('display', 'none');
             }
+        });
+    }
+
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
 </script>
